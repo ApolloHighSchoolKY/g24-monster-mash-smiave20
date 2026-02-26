@@ -22,7 +22,7 @@ public class MonsterMash
     //This is specifying that sally is now a witch instead of a Monster.
     //.fly() is only located for a Witch. Not a Monster. Which this class can only read Monster.
     //So specifying allows the method from the witch to be applied in this method.
-    //Taking something from the future and aplling it to the past
+    //Taking something from the future and aplying it to the past
     System.out.println(((Witch)sally).fly());
 
     //Declare a Monster of your new type
@@ -35,5 +35,9 @@ public class MonsterMash
     
    //Connecting the main file to the "actions" you created in the new seporated class created.
     System.out.println(((Cyclops)pauli).destroyer());
+
+    Skeleton skelly = new Skeleton();
+
+    System.out.println(skelly);
   }
 }

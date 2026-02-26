@@ -5,8 +5,9 @@ public class Cyclops extends Monster{
 
      //Modified constructer for the Witch class.
     public Cyclops(String name){
-        inputName = "";
         super(name);
+        inputName = "";
+        
     }
 
     //Override kill
