@@ -18,6 +18,9 @@ public class Cow extends Animal
 
     public Cow()
     {
+        //Defualt cow, is going through super to get the ability to make a sound from Animal. 
+        //And now the cow is able to say its "Moo".
+        super("Moo");
         milkProduced = 0;
     }
 
@@ -31,10 +34,11 @@ public class Cow extends Animal
 
    //Override speak() to include cow-specific information.
    //MUST MATCH EVERYTHING PERFECTLY FROM THE PARENT CLASS!
-   //getSound() is going back to the Parent Class (Animal)
+   //This does because it will return the sound inputed to the instance variable (sound).
+   //super.speak() is going back to the Parent Class (Animal) to access sounds to enable speaking mobility for the cow.
    public String speak()
    {
-        return "" + getSound();
+        return "" + super.speak();
    }
 
    //Override eat() so that every time the cow eats, 
@@ -49,4 +53,16 @@ public class Cow extends Animal
         //When the Cow eats, its milkProduce increases as well. 
         milkProduced++;
    }
+
+   public String toString()
+    {
+        //If the statement in the method isAlive() in the Parent Class (Animal) is true, then return the statement listed below.
+		if(super.isAlive())
+		{
+			return super.toString() + "\nMilk produced: " + milkProduced;
+		}
+
+        //Else, the statement in the method in the Parent Class (Animal) is false. Return this statement instead listed below.
+		return "" + "The Cow was " + super.getAlive() + "years old when it passed away." + "The milk that it produced " + milkProduced + ".\n";
+ 	}
 }

@@ -24,18 +24,15 @@ public class Animal
 		//Because a defualt Constructer is located in the Parent class, we are now not forced to write a constructer in the extended classes automatically. (But its still good to.)
 	    public Animal()
 	    {
-			age = 0;
-			alive = true;
-			sound = "";
+			//Transfering sound to modifier constructer
+			this("Sound");
 	    }
 
 		//Modified Constructor
 		//"Multi-parameter constructor"
-		public Animal(int age, String sound){
-			//The instance variable (age), located only in this class. Is being called by (this.)
+		public Animal(String sound){
 			//The instance variable (sound), locate only in this class. Is being called by (this.)
-			//These two specific variables are now being applied to the parameters in this modified constructer.
-			this.age = age;
+			//This specific variable is now being applied to the parameter in this modified constructer.
 			this.sound = sound;
 		}
 
@@ -65,7 +62,7 @@ public class Animal
 		public void eat()
 		{
 			//void, no return type.
-			//Is this correct???
+			//Accumulates age the variable to increase by one.
 			age++;
 		}
 
@@ -87,11 +84,12 @@ public class Animal
 			return age;
 		}
 
-		public String getSound()
-		{
+		//Do not need this becasue of speak. Same code, adding this is unnecessary.
+		/*public String getSound()
+		{ 
 			return "" + sound;
 		}
-
+		*/
 
      	/**
      	* If you attempt to print the animal, if the animal is alive print its age and have it make
@@ -100,8 +98,16 @@ public class Animal
      	*/
      	public String toString()
      	{
-     		return "" + "The animal is " + isAlive() + "." + "Its age is " + getAge() + "." + "And the sound it makes is " + speak() + ".\n";
-			//This says it is unreachable. Why????
-			//return "" + "The animal was " + isAlive() + "." + "Its age was " + getAge() + ".\n";
+			//Can have a if statement in the toString. Its Okay.
+
+			//alive is set to true.
+			//If alive, return the statement written.
+			if(alive)
+			{
+				return "" + "The animal is " + isAlive() + " years old." + "Its age is " + getAge() + "." + "And the sound it makes is " + speak() + ".\n";
+			}
+     		
+			//Else (dead), Return this statement instead.
+			return "" + "The animal was " + isAlive() + " years old." + "Its age was " + getAge() + " when it passed.\n";
      	}
 }
