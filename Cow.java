@@ -52,6 +52,8 @@ public class Cow extends Animal
 
         //When the Cow eats, its milkProduce increases as well. 
         milkProduced+= 10;
+
+        milkProduced=milkProduced;
         
         //More specific to a cow 
         return "The cow ate and produced milk.";
