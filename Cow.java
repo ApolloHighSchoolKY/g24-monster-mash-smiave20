@@ -52,6 +52,7 @@ public class Cow extends Animal
 
         //When the Cow eats, its milkProduce increases as well. 
         milkProduced++;
+        milkProduced=milkProduced;
    }
 
    public String toString()
