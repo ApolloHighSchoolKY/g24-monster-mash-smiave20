@@ -43,7 +43,7 @@ public class Cow extends Animal
 
    //Override eat() so that every time the cow eats, 
    //it also increases its milkProduced total.
-   public void eat()
+   public String eat()
    {
         //Cow eats, increase age by one (super)
         //This is connecting the Cow extention to the Parent Class (Animal) 
@@ -51,7 +51,16 @@ public class Cow extends Animal
         super.eat();
 
         //When the Cow eats, its milkProduce increases as well. 
-        milkProduced++;
+        milkProduced+= 10;
+        
+        //More specific to a cow 
+        return "The cow ate and produced milk.";
+   }
+
+   public String producedMilk(int x)
+   {
+        milkProduced += x;
+        return "The Cow produced " + x + " more milk. ";
    }
 
    public String toString()
