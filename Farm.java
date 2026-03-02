@@ -5,7 +5,7 @@
  * @author
  * @version 1.00 2023/3/8
  */
-
+import java.util.ArrayList;
 
 //ArrayList of Animals 
 //Populate it with various types of Animals 
@@ -18,7 +18,34 @@ public class Farm
     {
         //Make an ArrayList and fill it with Animals.
         List farmArray = new ArrayList<Animal>();
-        
+        //Add an Aniaml, Cow and use them in a Loop
+        farmArray.add(new Animal());
+        farmArray.add(new Animal("Caw caw"));
+        farmArray.add(new Cow());
+
+        for(Animal x: animalFarm)
+        {
+            System.out.println(x.speack());
+            System.out.println(x.eat());
+
+            //Common way
+            //Generic Way. Won't read specifics.
+            //instanceof is saying that (x will only work with an instance of a cow). And only with that moment.
+            if(x instanceof Cow)
+            {
+            System.out.println(((Cow)x).producedMilk(10));
+            }
+
+            /*
+                Less common way
+
+                This wil not reads different cows.More specific
+
+                if(x.getClass() == Cow.class)
+                    System.out.println("This is a Cow.");
+            */
+        }
+
         //For Parent Class
         Animal cheetah = new Animal("Cheetah");
 

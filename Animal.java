@@ -10,7 +10,6 @@
  * @author  Mr. Leohr, February 7th, 2016
  */
 
- //WHAT IS HAPPENING???? HELP PLEASE!!!
 //Parent Class
 public class Animal
 {
@@ -60,11 +59,14 @@ public class Animal
      	}
 
 		//Add a void eat() method in Animal that increases age.
-		public void eat()
+		public String eat()
 		{
 			//void, no return type.
 			//Accumulates age the variable to increase by one.
 			age++;
+
+			//Very basic because the animal is basic.
+			return "The Animal ate.";
 		}
 
      	/**
